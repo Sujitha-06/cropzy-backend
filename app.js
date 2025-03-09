@@ -4,7 +4,11 @@ const cors = require("cors");
 const axios = require("axios");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: "*",
+    methods: "GET",
+    allowedHeaders: "Content-Type"
+}));
 
 const WEATHERSTACK_API_KEY = process.env.WEATHERSTACK_API_KEY; // API key from .env file
 
